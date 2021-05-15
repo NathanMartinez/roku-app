@@ -1,13 +1,14 @@
 import React from 'react'
 import queries from '../hooks/sendKeypress'
 
-export default function DirectionalButtons() {
+export default function SourceButtons() {
   const directionalButtons = [
-    'Select',
-    'Left',
-    'Right',
-    'Down',
-    'Up',
+    'InputTuner',
+    'InputHDMI1',
+    'InputHDMI2',
+    'InputHDMI3',
+    'InputHDMI4',
+    'InputAV1'
   ]
 
   const handleSubmit = (e) => {

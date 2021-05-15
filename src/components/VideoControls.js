@@ -1,13 +1,11 @@
 import React from 'react'
 import queries from '../hooks/sendKeypress'
 
-export default function DirectionalButtons() {
+export default function VideoControls() {
   const directionalButtons = [
-    'Select',
-    'Left',
-    'Right',
-    'Down',
-    'Up',
+    'Rev',
+    'Play',
+    'Fwd'
   ]
 
   const handleSubmit = (e) => {

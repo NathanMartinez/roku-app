@@ -1,13 +1,11 @@
 import React from 'react'
 import queries from '../hooks/sendKeypress'
 
-export default function DirectionalButtons() {
+export default function VolumeButtons() {
   const directionalButtons = [
-    'Select',
-    'Left',
-    'Right',
-    'Down',
-    'Up',
+    'VolumeMute',
+    'VolumeDown',
+    'VolumeUp'
   ]
 
   const handleSubmit = (e) => {
