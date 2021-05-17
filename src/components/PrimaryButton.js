@@ -1,5 +1,5 @@
 import { IconButton } from '@material-ui/core'
-import sendCommand from '../hooks/sendCommand'
+import sendCommand from '../hook/sendCommand'
 
 export default function PrimaryButton({ option }) {
 

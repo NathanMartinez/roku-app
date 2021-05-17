@@ -20,14 +20,12 @@ function App() {
   )
 }
 const StyledPaper = styled(Paper)`
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
+  width: 200px;
   z-index: 100;
 `
 
