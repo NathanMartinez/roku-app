@@ -5,12 +5,13 @@ import VolumeButtons from "./components/VolumeButtons";
 import { Paper } from '@material-ui/core'
 import { PowerSettingsNew } from '@material-ui/icons'
 import styled from 'styled-components'
+import PrimaryButton from "./components/PrimaryButton";
 
 function App() {
   return (
       <StyledPaper variant="elevation">
         <PowerButton>
-          <PowerSettingsNew />
+          <PrimaryButton option={{ name: 'PowerOff', icon: <PowerSettingsNew style={{color: "red"}} /> }}/>
         </PowerButton>
         <OptionButtons />
         <DirectionalButtons />
