@@ -1,5 +1,5 @@
 import React from 'react'
-import queries from '../hooks/sendKeypress'
+import sendCommand from '../hooks/sendCommand'
 
 export default function SourceButtons() {
   const directionalButtons = [
@@ -13,7 +13,7 @@ export default function SourceButtons() {
 
   const handleSubmit = (e) => {
     const { name } = e.target
-    queries.sendKeypress(name);
+    sendCommand('keypress', name);
   }
 
   let buttons = directionalButtons.map((option, i) => <button key={ i } name={ option } onClick={handleSubmit}>{ option }</button>)

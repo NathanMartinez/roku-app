@@ -1,25 +1,31 @@
 import React from 'react'
-import queries from '../hooks/sendKeypress'
+import PrimaryButton from './PrimaryButton'
+import { ArrowDropUp, ArrowLeft, ArrowRight, ArrowDropDown } from '@material-ui/icons'
+import styled from 'styled-components'
 
 export default function DirectionalButtons() {
   const directionalButtons = [
-    'Select',
-    'Left',
-    'Right',
-    'Down',
-    'Up',
+    { name: 'Up', icon: <ArrowDropUp />},
+    { name: 'Left', icon: <ArrowLeft />},
+    { name: 'Select', icon: "OK"},
+    { name: 'Right', icon: <ArrowRight />},
+    { name: 'Down', icon: <ArrowDropDown />}
   ]
 
-  const handleSubmit = (e) => {
-    const { name } = e.target
-    queries.sendKeypress(name);
-  }
-
-  let buttons = directionalButtons.map((option, i) => <button key={ i } name={ option } onClick={handleSubmit}>{ option }</button>)
-
   return (
-    <div>
-      { buttons }
-    </div>
+    <DirectionalButtonWrapper>
+      <PrimaryButton option={ directionalButtons[0] }/>
+      <div>
+        <PrimaryButton option={ directionalButtons[1] }/>
+        <PrimaryButton option={ directionalButtons[2] }/>
+        <PrimaryButton option={ directionalButtons[3] }/>
+      </div>
+      <PrimaryButton option={ directionalButtons[4] }/>
+    </DirectionalButtonWrapper>
   )
 }
+const DirectionalButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

@@ -1,23 +1,25 @@
 import React from 'react'
-import queries from '../hooks/sendKeypress'
+import PrimaryButton from './PrimaryButton'
+import { VolumeOff, VolumeDown, VolumeUp } from '@material-ui/icons';
+import { ButtonGroup } from '@material-ui/core';
 
 export default function VolumeButtons() {
   const directionalButtons = [
-    'VolumeMute',
-    'VolumeDown',
-    'VolumeUp'
+    { name: 'VolumeMute', icon: <VolumeOff /> },
+    { name: 'VolumeDown', icon: <VolumeDown/> },
+    { name: 'VolumeUp', icon: <VolumeUp/> }
   ]
 
-  const handleSubmit = (e) => {
-    const { name } = e.target
-    queries.sendKeypress(name);
-  }
-
-  let buttons = directionalButtons.map((option, i) => <button key={ i } name={ option } onClick={handleSubmit}>{ option }</button>)
+  let buttons = directionalButtons.map((option, i) => (
+  <PrimaryButton key={ i } option={ option } />
+  ))
 
   return (
     <div>
-      { buttons }
+      <ButtonGroup color="primary" aria-label="outlined primary button group">
+        { buttons }
+      </ButtonGroup>   
     </div>
+
   )
 }

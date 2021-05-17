@@ -1,23 +1,23 @@
 import React from 'react'
-import queries from '../hooks/sendKeypress'
+import PrimaryButton from './PrimaryButton'
+import { FastRewind, PlayArrow, FastForward } from '@material-ui/icons';
+import { ButtonGroup } from '@material-ui/core';
 
 export default function VideoControls() {
   const directionalButtons = [
-    'Rev',
-    'Play',
-    'Fwd'
+    {name: 'Rev', icon: <FastRewind />},
+    {name: 'Play', icon: <PlayArrow />},
+    {name: 'Fwd', icon: <FastForward />}
   ]
 
-  const handleSubmit = (e) => {
-    const { name } = e.target
-    queries.sendKeypress(name);
-  }
-
-  let buttons = directionalButtons.map((option, i) => <button key={ i } name={ option } onClick={handleSubmit}>{ option }</button>)
+  let buttons = directionalButtons.map((option, i) => <PrimaryButton key={ i } option={ option } />)
 
   return (
     <div>
-      { buttons }
+      <ButtonGroup>
+        { buttons }
+      </ButtonGroup>   
     </div>
+
   )
 }
