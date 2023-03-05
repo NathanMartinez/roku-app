@@ -1,3 +1,6 @@
 # Roku TV controller app
 
-## This is a small application that I built to be able to control my Roku TV as a Google Extention created with React
+- Build with Reach
+- Useable as a Google Chrome extention
+- Connects to backend API to connect to Roku API
+
